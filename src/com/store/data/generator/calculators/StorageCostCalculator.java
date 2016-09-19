@@ -10,7 +10,8 @@ public class StorageCostCalculator
             final ItemSize itemSize)
     {
         return itemType.getBaseStorageCostPerMonth()
-                + itemType.getBaseStorageCostPerMonth() * (itemSize.getAdditionalStorageCostIndexPerMonth() * itemType.getStorageCostIncreasePerSizeIncrease());
+                + itemType.getBaseStorageCostPerMonth()
+                    * (itemSize.getAdditionalStorageCostIndexPerMonth() * itemType.getStorageCostIncreasePerSizeIncrease());
 
     }
 }

@@ -1,9 +1,13 @@
 package com.store.data.generator;
 
 import com.store.data.generator.generators.ItemGenerator;
+import com.store.data.generator.generators.NameGenerator;
 import com.store.data.generator.models.Item;
 import com.store.data.generator.models.ItemType;
+import com.store.data.generator.utils.NameRetriever;
 
+import java.io.File;
+import java.io.PrintWriter;
 import java.util.LinkedList;
 
 /**
@@ -25,16 +29,17 @@ import java.util.LinkedList;
  */
 public class Demo
 {
-    public static void main(String args[])
+    public static void main(String args[]) throws Exception
     {
-        final ItemGenerator itemGenerator = new ItemGenerator();
-        final LinkedList<Item> items = itemGenerator.listAllCombinations();
 
-        for (final Item item : items)
-        {
-            System.out.println(items);
-        }
-
-        System.out.println(items.size());
+//        final ItemGenerator itemGenerator = new ItemGenerator();
+//        final LinkedList<Item> items = itemGenerator.listAllCombinations();
+//
+//        for (final Item item : items)
+//        {
+//            System.out.println(items);
+//        }
+//
+//        System.out.println(items.size());
     }
 }
