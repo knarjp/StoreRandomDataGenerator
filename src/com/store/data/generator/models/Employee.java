@@ -17,9 +17,9 @@ public class Employee
         return lastName;
     }
 
-    public int getSalary()
+    public Level getLevel()
     {
-        return salary;
+        return level;
     }
 
     public Department getDepartment()
@@ -27,22 +27,34 @@ public class Employee
         return department;
     }
 
+    @Override
+    public String toString()
+    {
+        return "Employee{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", level=" + level +
+                ", department=" + department +
+                '}';
+    }
+
     public Employee(final long id,
                     final String firstName,
                     final String lastName,
-                    final int salary,
+                    final Level level,
                     final Department department)
     {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.salary = salary;
+        this.level = level;
         this.department = department;
     }
 
     private final long id;
     private final String firstName;
     private final String lastName;
-    private final int salary;
+    private final Level level;
     private final Department department;
 }

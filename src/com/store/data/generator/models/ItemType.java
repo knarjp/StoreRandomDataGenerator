@@ -14,7 +14,7 @@ public enum ItemType
         switch (ItemType.valueOf(this.toString()))
         {
             case SHIRT:
-                return 0.02; // FIXME: 9/13/2016 make these values more accurate
+                return 0.02;
             case SHORTS:
                 return 0.018;
             case JEANS:

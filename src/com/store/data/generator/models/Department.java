@@ -13,20 +13,19 @@ public enum Department
         switch (Department.valueOf(this.name()))
         {
             case MEN:
-                return 1103;
+                return 15;
 
             case WOMEN:
-                return 1263;
+                return 19;
 
             case GIRLS:
-                return 1453;
+                return 8;
 
             case BOYS:
-                return 1312;
+                return 9;
 
             default:
                 throw new RuntimeException("Reached invalid location in Department.getStaffSize()");
         }
-
     }
 }

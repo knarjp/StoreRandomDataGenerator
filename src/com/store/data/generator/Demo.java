@@ -1,14 +1,16 @@
 package com.store.data.generator;
 
+import com.store.data.generator.calculators.StorageCostCalculator;
+import com.store.data.generator.generators.EmployeeGenerator;
 import com.store.data.generator.generators.ItemGenerator;
 import com.store.data.generator.generators.NameGenerator;
+import com.store.data.generator.models.Employee;
 import com.store.data.generator.models.Item;
-import com.store.data.generator.models.ItemType;
 import com.store.data.generator.utils.NameRetriever;
 
-import java.io.File;
-import java.io.PrintWriter;
+import java.io.IOException;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Purchases:
@@ -31,15 +33,34 @@ public class Demo
 {
     public static void main(String args[]) throws Exception
     {
+    }
 
-//        final ItemGenerator itemGenerator = new ItemGenerator();
-//        final LinkedList<Item> items = itemGenerator.listAllCombinations();
-//
-//        for (final Item item : items)
-//        {
-//            System.out.println(items);
-//        }
-//
-//        System.out.println(items.size());
+    private static void testEmployeeGenerator() throws IOException
+    {
+        final NameRetriever nameRetriever = new NameRetriever();
+        final NameGenerator nameGenerator = new NameGenerator(nameRetriever);
+        final EmployeeGenerator employeeGenerator = new EmployeeGenerator(nameGenerator);
+        List<Employee> employeeList = employeeGenerator.generateEmployees();
+
+        for (Employee employee : employeeList)
+        {
+            System.out.println(employee);
+        }
+
+        System.out.println(employeeList.size());
+    }
+
+    private static void testItemsGenerator()
+    {
+        final StorageCostCalculator storageCostCalculator = new StorageCostCalculator();
+        final ItemGenerator itemGenerator = new ItemGenerator(storageCostCalculator);
+        final LinkedList<Item> items = itemGenerator.listAllCombinations();
+
+        for (final Item item : items)
+        {
+            System.out.println(items);
+        }
+
+        System.out.println(items.size());
     }
 }
