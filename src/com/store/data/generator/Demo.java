@@ -33,6 +33,8 @@ public class Demo
 {
     public static void main(String args[]) throws Exception
     {
+        testItemsGenerator();
+        //testEmployeeGenerator();
     }
 
     private static void testEmployeeGenerator() throws IOException
@@ -54,13 +56,13 @@ public class Demo
     {
         final StorageCostCalculator storageCostCalculator = new StorageCostCalculator();
         final ItemGenerator itemGenerator = new ItemGenerator(storageCostCalculator);
-        final LinkedList<Item> items = itemGenerator.listAllCombinations();
+        List<Item> itemList = itemGenerator.listAllCombinations();
 
-        for (final Item item : items)
+        for (Item items : itemList)
         {
             System.out.println(items);
         }
 
-        System.out.println(items.size());
+        System.out.println(itemList.size());
     }
 }

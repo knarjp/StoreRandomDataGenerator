@@ -30,13 +30,13 @@ public class Employee
     @Override
     public String toString()
     {
-        return "Employee{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", level=" + level +
-                ", department=" + department +
-                '}';
+        return "insert into EMPLOYEE values(" +
+                id + ", '" +
+                firstName + "', '" +
+                lastName + "', '" +
+                department + "', " +
+                level +
+                ");";
     }
 
     public Employee(final long id,
